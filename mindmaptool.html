@@ -9,6 +9,30 @@
 
 <style>
 	
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=button] {
+  width: 100%;
+  min-width: 100%;
+  padding: 12px 20px;
+  cursor: pointer;
+  float: right;
+  box-sizing: content-box
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
 .left{
 	margin: 1%;
 	float: left;
@@ -196,7 +220,7 @@ window.location=a;
 <input type="text" id="concept1"><br>
 <label for="lname">Related Concept:</label><br>
 <input type="text" id="concept2"><br><br>
-<input type="button" id="add" value="Add Relationship" onclick="add2()"><br><br>
+<input type="button" id="add" value="Add" onclick="add2()"><br><br>
 <input type="button" value="Undo" onclick="undo()"> <br><br>
 <input type="button" value="Reset" onclick="clearit()"> <br><br>
 <input type="button" value="Step" onclick="singlestep()"> <br><br>
