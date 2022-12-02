@@ -5,7 +5,11 @@ h1 {
     color:red
 }
 body {
-    margin:20%
+	
+	background-color: light blue;
+	border: 15px solid blue;
+	padding: 50px;
+	margin: 20%;
 }
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +19,7 @@ body {
 <h1>C++ Keywords Game</h1>
 Enter a keyword
 <input type="text" id="resp" /><br><br>
-<input type="button" onClick="add();" value="Enter"/>
+<input type="button" onClick="add();" value="Enter" id="button1"/>
 <br><br>
 Result:<div id="result"></div>
 <br><br>
@@ -115,6 +119,14 @@ keywords = [
 "xor",
 "xor_eq"];
 	
+var input = document.getElementById("resp");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("button1").click();
+  }
+});
+
 function add()
 {
 	e = document.getElementById("resp");
@@ -122,17 +134,19 @@ function add()
 	{
 		if (keywords[i].localeCompare(e.value)==0)
 		{
-			document.getElementById("result").innerHTML = "YES";
+			document.getElementById("result").innerHTML = "YES! That is a keyword!";
 			score=score+1;
 			document.getElementById("score").innerHTML = ""+score;
 			if (score==20)
 			    document.getElementById("score").innerHTML = "20 YOU WIN!";
 			keywords[i]="";
+			document.getElementById("resp").value="";
 			break;
 		}
 		else
 		{
 			document.getElementById("result").innerHTML = "   ";
+			//e.value="";
 		}
 	}
 }
